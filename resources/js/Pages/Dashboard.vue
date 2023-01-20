@@ -210,8 +210,8 @@
 
                             </div>
 
-                            <div class="text-center start-recording-wrapper"><button disabled="disabled"
-                                    class="start-recording">Start
+                            <div class="text-center start-recording-wrapper" ><button
+                                    class="start-recording" @click="stopRecording">Stop
                                     Recording</button></div>
                         </div>
                     </div>
@@ -283,6 +283,7 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 </style>
 <script>
 import AppNavbar from "../Layouts/AppNavbar.vue";
@@ -337,7 +338,7 @@ export default {
                 this.recording = true;
             } catch (err) {
                 console.log("Error while starting recording: ", err);
-                this.perm = false;
+                // this.perm = false;
                 // location.reload();
             }
         },
